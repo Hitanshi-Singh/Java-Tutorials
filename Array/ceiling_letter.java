@@ -9,8 +9,11 @@ public class ceiling_letter {
     }
 
     static char ceil(char arr[], char target) {
+
         int start = 0;
         int end = arr.length - 1;
+        if (arr[end] < target)
+            return arr[0];
         while (start < end) {
             int mid = start + (end - start);
             if (target <= arr[mid]) {
