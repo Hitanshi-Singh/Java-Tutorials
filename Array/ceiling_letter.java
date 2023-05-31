@@ -1,8 +1,6 @@
-import java.util.*;
 
 public class ceiling_letter {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         char arr[] = { 'a', 'c', 'e', 'g', 'h', 'l', 'p' };
         char target = 'd';
         System.out.println(ceil(arr, target));
