@@ -20,4 +20,10 @@ public class sortedMatrix {
         }
         return new int[] { 1, -1 };
     }
+
+    static int[] search(int[][] matrix, int target) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+    }
 }
