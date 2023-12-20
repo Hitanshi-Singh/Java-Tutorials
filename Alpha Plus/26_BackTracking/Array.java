@@ -11,6 +11,7 @@ public class Array {
         int a[] = new int[n];
         backtrack(n - 1, a, n - 1);
         System.out.println(Arrays.toString(a));
+        sc.close();
 
     }
 

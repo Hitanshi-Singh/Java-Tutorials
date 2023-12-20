@@ -10,7 +10,7 @@ public class Duplicates {
         int i = 0;
         String newStr = "";
         System.out.println(removeDuplicate(str, newStr, i, new boolean[26]));
-
+        sc.close();
     }
 
     public static String removeDuplicate(String str, String newStr, int i, boolean[] map) {

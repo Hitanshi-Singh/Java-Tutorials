@@ -6,6 +6,7 @@ public class Tiling {
         System.out.print("For the size of board 2 x n, Enter n : ");
         int n = sc.nextInt();
         System.out.println(tile(n));
+        sc.close();
     }
 
     public static int tile(int n) {
