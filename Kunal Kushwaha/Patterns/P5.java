@@ -1,5 +1,5 @@
 // https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
-package Patterns;
+// package Patterns;
 
 import java.util.Scanner;
 

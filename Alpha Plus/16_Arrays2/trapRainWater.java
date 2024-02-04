@@ -1,36 +1,49 @@
-public class trapRainWater {
-    public static int findTower(int a[], int start) {
-        int n = a.length, index = 0;
-        int max = Integer.MIN_VALUE;
-        for (int i = start; i < n; i++) {
-            if (max < a[i]) {
-                max = a[i];
-                index = i;
-            }
+import java.util.*;
+
+public class TrapRainWater {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = 7;
+
+        int a[] = new int[n];
+        System.out.println("Enter elements : ");
+        for (int i = 0; i < a.length; i++) {
+            a[i] = sc.nextInt();
         }
-        return index;
+        int left[] = new int[n];
+        int right[] = new int[n];
+        trappedWater(a, left, right);
+        sc.close();
     }
 
-    public static void main(String[] args) {
-        int a[] = {};
-        int n = a.length, start=0,end;
-        int first = a[0];
-        for (int i = 0; i < n; i++) {
-            if (a[i] > 0) {
-                first = a[i];
-                start = i; 
-                break;
-            }
-        }
-        do{
-            end = findTower(a,start+1);
-            start=
-
-        }while(end!=start+1);
-
-        if(end==start+1){
+    public static void setBoundary(int a[], int left[], int right[]) {
+        int leftMax = a[0];
+        int rightMax = a[a.length - 1];
+        int i;
+        for (i = 0; i < a.length; i++) {
+            if (a[i] > leftMax)
+                leftMax = a[i];
+            left[i] = leftMax;
 
         }
+        for (i = a.length - 1; i >= 0; i--) {
+            if (a[i] > rightMax)
+                rightMax = a[i];
+            right[i] = rightMax;
+        }
+    }
+
+    public static void trappedWater(int a[], int left[], int right[]) {
+        setBoundary(a, left, right);
+        int vol = 0;
+        for (int i = 0; i < a.length; i++) {
+            int min = Math.min(left[i], right[i]);
+            int level = min - a[i];
+            if (level < 0)
+                level = 0;
+            vol = vol + level;
+        }
+        System.out.println(vol);
 
     }
 }
