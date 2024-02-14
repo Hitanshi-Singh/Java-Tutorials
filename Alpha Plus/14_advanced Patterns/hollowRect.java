@@ -24,5 +24,6 @@ public class hollowRect {
         System.out.println("enter Column");
         int c = sc.nextInt();
         hRect(r, c);
+        sc.close();
     }
 }

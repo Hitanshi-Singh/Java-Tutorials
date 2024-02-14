@@ -32,5 +32,6 @@ public class Compression {
             }
         }
         System.out.println(str);
+        sc.close();
     }
 }

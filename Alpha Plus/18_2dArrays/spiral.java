@@ -37,5 +37,6 @@ class spiral {
             endRow--;
         }
         System.out.println();
+        sc.close();
     }
 }

@@ -15,7 +15,16 @@ public class TwoPointerApproach {
         height.add(3);
         height.add(7);
         int max = storeWater(height);
-        System.out.println(max);
+        // System.out.println(max);
+        ArrayList<Integer> pairs = new ArrayList<>();
+        int target = 5;
+        pairs.add(1);
+        pairs.add(2);
+        pairs.add(3);
+        pairs.add(4);
+        pairs.add(5);
+        pairs.add(6);
+        System.out.println(pairSum1(pairs, target));
     }
 
     public static int storeWater(ArrayList<Integer> height) {
@@ -27,8 +36,23 @@ public class TwoPointerApproach {
             if (height.get(p1) > height.get(p2)) {
                 p2--;
             } else
-            p1++;
+                p1++;
         }
         return max;
+    }
+
+    // this function is for two function approach of pair sum - 1
+    public static boolean pairSum1(ArrayList<Integer> pairs, int target) {
+        int start = 0, end = pairs.size() - 1, sum;
+        while (start != end) {
+            sum = pairs.get(start) + pairs.get(end);
+            if (sum == target)
+                return true;
+            else if (sum > target)
+                end--;
+            else
+                start++;
+        }
+        return false;
     }
 }
