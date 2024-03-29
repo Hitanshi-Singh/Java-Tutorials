@@ -1,6 +1,7 @@
 package Heaps;
 
 import java.util.ArrayList;
+
 //works just like Priority Queue
 public class insertNode {
     static class Heap {
@@ -13,7 +14,7 @@ public class insertNode {
             int x = arr.size() - 1;// child index (x)
             int par = (x - 1) / 2;// parent index
 
-            while (arr.get(x) < arr.get(par)) {// O(logn)  //> will make it max heap
+            while (arr.get(x) < arr.get(par)) {// O(logn) //> will make it max heap
                 // swap
                 int temp = arr.get(x);
                 arr.set(x, arr.get(par));
@@ -62,11 +63,11 @@ public class insertNode {
             heapify(0);
             return data;
         }
+
         public boolean isEmpty() {
             return arr.size() == 0;
         }
     }
-
 
     public static void main(String[] args) {
         Heap h = new Heap();
