@@ -7,7 +7,7 @@ public class NQueens_2 {
                 board[i][j] = 'x';
             }
         }
-        if (nQueens(board, 0))NQueens_2
+        if (nQueens(board, 0))
             printBoard(board);
         else
             System.out.println("No Solutions");
