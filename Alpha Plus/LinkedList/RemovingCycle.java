@@ -34,6 +34,7 @@ public class RemovingCycle {
         // point the slow pointer to head
         Node slow = head;
         Node fast = detectCycle();
+        System.out.println(fast.data);
         Node prev = head;
         if (fast != null) {
             while (fast != slow) {
@@ -83,7 +84,9 @@ public class RemovingCycle {
         head = new Node(1);
         head.next = new Node(2);
         head.next.next = new Node(3);
-        head.next.next.next = head.next;
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        head.next.next.next.next.next = head.next;
         ll.removeCycle();
         ll.print();
     }
