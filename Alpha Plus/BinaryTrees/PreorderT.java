@@ -1,4 +1,8 @@
+//Bulding tree using preordersequence given
+
 package BinaryTrees;
+
+import java.util.*;
 
 public class PreorderT {
     public static class Node {
@@ -26,12 +30,43 @@ public class PreorderT {
 
             return newNode;// returning the root of the tree
         }
+
+        // level order traversal
+        public static void level(Node root) {
+            if (root == null) {
+                return;
+            }
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while (!q.isEmpty()) {
+
+                Node x = q.remove();
+                if (x == null) {
+                    System.out.println();
+                    if (q.isEmpty())
+                        break;
+                    else
+                        q.add(null);
+                } else {
+                    System.out.print(x.data+"\t");
+                    if (x.left != null)
+                        q.add(x.left);
+                    if (x.right != null)
+                        q.add(x.right);
+                }
+
+            }
+
+        }
     }
 
     public static void main(String[] args) {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         // BinaryTree tree=new BinaryTree();
         Node root = BinaryTree.buildTree(nodes);
-        System.out.println(root.data);
+        
+        BinaryTree.level(root);
     }
 }
